@@ -6,8 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rand = "0.8.5"
-serde = { version = "1.0.188", features = ["derive"] }
-serde_json = "1.0.107"
-serde_yaml = "0.9.25"
-tokio = {version="1.32.0",features=["full"]}
+serde-json-core = "0.4"
+heapless = { version = "0.7", features = ["serde"] }
+mio = "0.7.0"
+serde = { version = "1.0", default-features = false, features = [
+    "alloc",
+    "derive",
+] }
+mio_httpc = { version = "0.10.4" }
